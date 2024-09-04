@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Guard - Safeguarding Your Jira Data</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        
+        :root {
+            --primary-color: #4B0082;
+            --secondary-color: #8A2BE2;
+            --accent-color: #FF6B6B;
+            --text-color: #F0E68C;
+            --bg-color: #1A1A2E;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'VT323', monospace;
+            line-height: 1.6;
+            font-size: 18px;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            background-color: var(--primary-color);
+            z-index: 1000;
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-shadow: 2px 2px var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border: 2px solid var(--accent-color);
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+        
+        .btn-outline {
+            border-color: var(--text-color);
+            color: var(--text-color);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(255, 107, 107, 0.5);
+        }
+        
+        section {
+            padding: 4rem 0;
+            border-bottom: 2px dashed var(--secondary-color);
+        }
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding-right: 2rem;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+            text-shadow: 2px 2px var(--primary-color);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+        }
+        
+        .hero p {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+        }
+        
+        .product-showcase {
+            flex: 1;
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            padding: 1rem;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        .product-showcase img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .feature {
+            flex-basis: calc(33.333% - 1rem);
+            margin-bottom: 2rem;
+            background-color: var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .newsletter, .contact {
+            background-color: var(--primary-color);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid var(--secondary-color);
+        }
+        
+        input[type="email"], textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            border: 2px solid var(--secondary-color);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero, .features {
+                flex-direction: column;
+            }
+            .hero-content, .product-showcase, .feature {
+                width: 100%;
+                padding: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Production Guard</div>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#purchase">Purchase</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#" class="btn btn-outline">Login</a>
+    </nav>
+
+    <div class="container">
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1>Safeguard Your Jira Data</h1>
+                <p>Secure your production data with automated, code-free Jira XML backups. Ensure your critical project information is protected and easily recoverable, without the complexity.</p>
+                <a href="#purchase" class="btn btn-primary">Get started</a>
+                <a href="#contact" class="btn btn-outline">Request demo</a>
+            </div>
+            <div class="product-showcase">
+                <img src="/api/placeholder/600/400" alt="Production Guard Interface">
+            </div>
+        </section>
+
+        <section id="newsletter">
+            <h2>Stay Informed</h2>
+            <div class="newsletter">
+                <p>Subscribe to our newsletter for updates on new features and best practices for Jira data protection.</p>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Automated Backups</h3>
+                    <p>Set up automated Jira XML backups to ensure your production data is always protected and up-to-date.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-code-branch feature-icon"></i>
+                    <h3>No-Code Setup</h3>
+                    <p>User-friendly interface for easy configuration without any coding knowledge required.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-clock feature-icon"></i>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Choose your preferred backup frequency to align with your project's needs and data criticality.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="purchase">
+            <h2>Purchase</h2>
+            <p>Safeguard your Jira production data with Production Guard. Choose the plan that fits your project needs.</p>
+            <!-- Add your pricing plans here -->
+        </section>
+
+        <section id="about">
+            <h2>About Production Guard</h2>
+            <p>Production Guard was born out of necessity and frustration. Created by a lone DevOps engineer who grew weary of the complex backup processes involving GitHub Action runners and intricate scripting, this tool embodies simplicity and efficiency in data protection.</p>
+            <p>Our mission is to provide a straightforward solution for Jira data backup and storage, ensuring your valuable production information is always protected and easily recoverable. We understand the critical nature of your data and the time constraints you face - that's why we've made Production Guard as user-friendly and automated as possible.</p>
+            <p>From one developer to another, we're here to make your Jira backup process painless, reliable, and secure.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact">
+                <p>Have questions about Production Guard or need assistance? We're here to help.</p>
+                <form>
+                    <input type="email" placeholder="Your email" required>
+                    <textarea placeholder="Your message" rows="4" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
