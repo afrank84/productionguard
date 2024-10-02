@@ -6,6 +6,7 @@
     <title>Production Guard - Safeguarding Your Jira Data</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
             --primary-color: #4B0082;
@@ -202,127 +203,127 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">Production Guard</div>
-        <ul class="nav-links">
-            <li><a href="#features">Features</a></li>
-            <li><a href="#purchase">Purchase</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Production Guard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#purchase">Purchase</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <div class="container">
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <h1>Safeguard Your Jira Data</h1>
-                <p>Secure your production data with automated, code-free Jira XML backups. Ensure your critical project information is protected and easily recoverable, without the complexity.</p>
-                <a href="#purchase" class="btn btn-primary">Get started</a>
-                <a href="#contact" class="btn btn-outline">Request demo</a>
-            </div>
-            <div class="product-showcase">
-                <img src="2024-09-04 16_16_49-Greenshot.png" alt="Production Guard Interface">
-            </div>
-        </section>
-
-        <section id="features">
-            <h2>Features</h2>
-            <div class="features">
-                <div class="feature">
-                    <i class="fas fa-shield-alt feature-icon"></i>
-                    <h3>Automated Backups</h3>
-                    <p>Set up automated Jira XML backups to ensure your production data is always protected and up-to-date.</p>
+        <section id="hero" class="py-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4">Safeguard Your Jira Data</h1>
+                    <p class="lead">Secure your production data with automated, code-free Jira XML backups. Ensure your critical project information is protected and easily recoverable, without the complexity.</p>
+                    <a href="#purchase" class="btn btn-primary me-2">Get started</a>
+                    <a href="#contact" class="btn btn-outline-secondary">Request demo</a>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-code-branch feature-icon"></i>
-                    <h3>No-Code Setup</h3>
-                    <p>User-friendly interface for easy configuration without any coding knowledge required.</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-clock feature-icon"></i>
-                    <h3>Flexible Scheduling</h3>
-                    <p>Choose your preferred backup frequency to align with your project's needs and data criticality.</p>
+                <div class="col-md-6">
+                    <img src="2024-09-04%2016_16_49-Greenshot.png" alt="Production Guard Interface" class="img-fluid">
                 </div>
             </div>
         </section>
 
-        <section id="purchase">
-            <h2>One-Time Purchase</h2>
-            <p>Invest in your data security with a single, lifetime purchase of Production Guard. No recurring fees, no hidden costs – just ongoing protection for your Jira data.</p>
-            <p>Our one-time purchase model means you get:</p>
-            <ul>
-                <li>Lifetime access to Production Guard</li>
-                <li>Free updates for improved features and security</li>
-                <li>Predictable cost for easier budgeting</li>
-            </ul>
-            <p>Secure your Jira production data today with a one-time investment in Production Guard.</p>
-            <a href="#" class="btn btn-primary">Buy Now</a>
-            <iframe
-                  id="JotFormIFrame-242513990974062"
-                  title="ProductionGuard_SignUp"
-                  onload="window.parent.scrollTo(0,0)"
-                  allowtransparency="true"
-                  allow="geolocation; microphone; camera; fullscreen"
-                  src="https://form.jotform.com/242513990974062"
-                  frameborder="0"
-                  style="min-width:100%;max-width:100%;height:539px;border:none;"
-                  scrolling="no"
-                >
-                </iframe>
-                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-242513990974062']", "https://form.jotform.com/")</script>
+        <section id="features" class="py-5">
+            <h2 class="text-center mb-4">Features</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Automated Backups</h3>
+                            <p class="card-text">Set up automated Jira XML backups to ensure your production data is always protected and up-to-date.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">No-Code Setup</h3>
+                            <p class="card-text">User-friendly interface for easy configuration without any coding knowledge required.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Flexible Scheduling</h3>
+                            <p class="card-text">Choose your preferred backup frequency to align with your project's needs and data criticality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="about">
-            <h2>About Production Guard</h2>
+        <section id="purchase" class="py-5">
+            <h2 class="text-center mb-4">One-Time Purchase</h2>
+            <div class="text-center">
+                <p class="lead">Invest in your data security with a single, lifetime purchase of Production Guard. No recurring fees, no hidden costs -- just ongoing protection for your Jira data.</p>
+                <ul class="list-unstyled">
+                    <li>Lifetime access to Production Guard</li>
+                    <li>Free updates for improved features and security</li>
+                    <li>Predictable cost for easier budgeting</li>
+                </ul>
+                <p>Secure your Jira production data today with a one-time investment in Production Guard.</p>
+                <a href="#" class="btn btn-primary btn-lg">Buy Now</a>
+            </div>
+        </section>
+
+        <section id="about" class="py-5">
+            <h2 class="text-center mb-4">About Production Guard</h2>
             <p>Production Guard was born out of necessity and frustration. Created by a lone DevOps engineer who grew weary of the complex backup processes involving GitHub Action runners and intricate scripting, this tool embodies simplicity and efficiency in data protection.</p>
             <p>Our mission is to provide a straightforward solution for Jira data backup and storage, ensuring your valuable production information is always protected and easily recoverable. We understand the critical nature of your data and the time constraints you face - that's why we've made Production Guard as user-friendly and automated as possible.</p>
             <p>From one developer to another, we're here to make your Jira backup process painless, reliable, and secure.</p>
         </section>
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <div class="contact">
-                <p>Have questions about Production Guard or need assistance? We're here to help.</p>
-                <form action="https://api.web3forms.com/submit" method="POST">
-
-                    <!-- Replace with your Access Key -->
-                    <input type="hidden" name="access_key" value="04b442f0-feda-4a19-9ba0-328fa8f7c2b1">
-                
-                    <!-- Form Inputs. Each input must have a name="" attribute -->
-                    <input type="text" name="name" placeholder="Name" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <textarea name="message" required placeholder="What is on your mind?"></textarea>
-                
-                    <!-- Honeypot Spam Protection -->
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                
-                    <!-- Custom Confirmation / Success Page -->
-                    <input type="hidden" name="redirect" value="https://productionguard.pages.dev/">
-                
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                
-                </form>
+        <section id="contact" class="py-5">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <p class="text-center mb-4">Have questions about Production Guard or need assistance? We're here to help.</p>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
     </div>
 
-    <footer>
-        <div class="copyright">
-            &copy; 2024 Production Guard by Anthony Frank. All rights reserved.
+    <footer class="bg-light py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Production Guard by Anthony Frank. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
